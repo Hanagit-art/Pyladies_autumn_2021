@@ -1,0 +1,60 @@
+"""Napiš funkci pohyb, která dostane seznam souřadnic a světovou stranu ("s", "j", "v" nebo "z") a přidá k seznamu poslední bod „posunutý“ v daném směru."""
+
+#  menim pozici pismene X pomoci cyklu while
+    
+# print(len(coor))
+# coor = coor[-1:] # posledni prvek seznamu dvojic
+
+coor = [(0, 0), (1, 0), (2, 0)]  
+def motion(dir): 
+    
+    east = [(coor[len(coor)-1][0], coor[len(coor)-1][1]+1)]
+    south = [(coor[len(coor)-1][0]+1, coor[len(coor)-1][1])]
+    west = [(coor[len(coor)-1][0], coor[len(coor)-1][1]-1)]
+    north = [(coor[len(coor)-1][0]-1, coor[len(coor)-1][1])]
+    
+    if dir == "east":
+        return east
+    elif dir == "south":
+        return south
+    elif dir == "west":
+        return west
+    elif dir == "north":
+        return north
+         
+
+def f(coor):  
+    dots = 10 * "."
+    map = []
+    for i in range(10):
+        map.append(list(dots))
+         
+    for raw, col in coor:
+        map[raw][col] = "X"   
+    return map
+
+
+while True:
+    dir = input("Set direction: ")
+             
+    if dir == "end":
+        break
+    try:   
+        dir = motion(dir)
+        print(dir)
+        if dir[0][0] < 0 or dir[0][1] < 0:
+            raise ValueError("Cislo {n} je mensi nez nula!".format(n=dir))
+    except 
+        coor = coor + dir
+        print(coor)
+        coor = coor[-3:]
+        print(coor)
+        print(coor)
+        
+        local_map = f(coor) 
+
+        for list2 in local_map:
+            for item in list2:
+                print(item, end=' ')
+                    
+            print()

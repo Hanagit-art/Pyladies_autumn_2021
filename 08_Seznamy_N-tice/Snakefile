@@ -1,0 +1,16 @@
+# Sort_vs_sorted.py
+
+vegetables = ['squash', 'pea', 'carrot', 'potato']
+
+new_list = sorted(vegetables)
+
+# new_list = ['carrot', 'pea', 'potato', 'squash']
+print(new_list)
+
+# vegetables = ['squash', 'pea', 'carrot', 'potato']
+print(vegetables)
+
+vegetables.sort()
+
+# vegetables = ['carrot', 'pea', 'potato', 'squash']
+print(vegetables)
