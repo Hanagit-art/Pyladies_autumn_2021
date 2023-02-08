@@ -1,0 +1,2 @@
+
+print('Hura, funguju!')
